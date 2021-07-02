@@ -1,0 +1,36 @@
+[
+    {
+        "model_name":"name",
+        "verbose_name":"whats your name?",
+        "Type":"CharField",
+        "options":""
+    },
+    {
+        "model_name":"amount",
+        "verbose_name":"how many u have?",
+        "Type":"IntegerField",
+        "options":""
+    },
+    {
+        "model_name":"is_available",
+        "verbose_name":"is that available?",
+        "Type":"BooleanField",
+        "options":""
+    },
+    {
+        "model_name":"open_time",
+        "verbose_name":"when it opens up",
+        "Type":"date",
+        "options":""
+    },
+    {
+        "model_name":"type",
+        "verbose_name":"what level is school at?",
+        "Type":"CharField-Select",
+        "options":{
+            "1":"level 1",
+            "2":"level 2",
+            "3":"level 3"
+        }
+    }
+]

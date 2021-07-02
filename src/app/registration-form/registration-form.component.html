@@ -1,0 +1,51 @@
+<h1>
+    {{ registrationForm.value | json }}
+</h1>
+<form [formGroup]="registrationForm">
+    <div *ngFor="let control of dynamicFormArray">
+        <div [ngSwitch]="control.Type">
+            <div *ngSwitchCase="'input'">
+                <div>
+                    <label>{{control.Label}}</label>
+                </div>
+                <div>
+                    <input type="text" [formControlName]="control.Id">
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'date'">
+                <div>
+                    <label>{{control.Label}}</label>
+                </div>
+                <div>
+                    <input type="date" [formControlName]="control.Id">
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'radio'">
+                <div>
+                    <label>{{control.Label}}</label>
+                </div>
+                <div>
+                    <label *ngFor="let val of control.Value.split(',')">
+                        <input type="radio" name="{{control.Id}}" value="{{val}}" [formControlName]="control.Id">
+                        {{val}}
+                    </label>
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'select'">
+                <div>
+                    <label>{{control.Label}}</label>
+                </div>
+                <div>
+                    <select [formControlName]="control.Id">
+                        <option value="-1">Select</option>
+                        <option *ngFor="let val of control.Value | keyvalue" value="{{val.value}}">{{val.value}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="sendForm()" [disabled]="isSaveDisabled()">submit</button>
+</form>

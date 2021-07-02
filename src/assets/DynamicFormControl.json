@@ -1,0 +1,28 @@
+[
+    {
+        "Id":"1",
+        "Label":"whats your name?",
+        "Type":"input"
+    },
+    {
+        "Id":"2",
+        "Label":"are u alive?",
+        "Type":"radio",
+        "Value":"yes,no"
+    },
+    {
+        "Id":"3",
+        "Label":"when did u born?",
+        "Type":"date",
+        "Value":""
+    },
+    {
+        "Id":"4",
+        "Label":"where do u live?",
+        "Type":"select",
+        "Value":{
+            "1":"qom",
+            "2":"tehran"
+        }
+    }
+]
